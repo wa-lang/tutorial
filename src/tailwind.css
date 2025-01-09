@@ -64,4 +64,20 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar:horizontal {
+    @apply h-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-foreground/5;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-foreground/10;
+  }
 }

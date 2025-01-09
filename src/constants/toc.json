@@ -1,0 +1,438 @@
+{
+  "en": {
+    "title": "en",
+    "path": "en",
+    "children": {
+      "1.InstallAndGetStart": {
+        "title": "1.InstallAndGetStart",
+        "path": "en/1.InstallAndGetStart",
+        "children": {
+          "1.1.HelloWorld": {
+            "title": "1.1.HelloWorld",
+            "path": "en/1.InstallAndGetStart/1.1.HelloWorld.md"
+          },
+          "1.2.Install": {
+            "title": "1.2.Install",
+            "path": "en/1.InstallAndGetStart/1.2.Install.md"
+          },
+          "1.3.Command": {
+            "title": "1.3.Command",
+            "path": "en/1.InstallAndGetStart/1.3.Command.md"
+          },
+          "1.4.ProjectStructure": {
+            "title": "1.4.ProjectStructure",
+            "path": "en/1.InstallAndGetStart/1.4.ProjectStructure.md"
+          },
+          "1.5.Plugins": {
+            "title": "1.5.Plugins",
+            "path": "en/1.InstallAndGetStart/1.5.Plugins.md"
+          },
+          "readme": {
+            "title": "1. Install and get start",
+            "path": "en/1.InstallAndGetStart/readme.md"
+          }
+        }
+      },
+      "2.ProgramStructure": {
+        "title": "2.ProgramStructure",
+        "path": "en/2.ProgramStructure",
+        "children": {
+          "2.1.GlobalDeclaration": {
+            "title": "2.1.GlobalDeclaration",
+            "path": "en/2.ProgramStructure/2.1.GlobalDeclaration.md"
+          },
+          "2.2.GlobalVariableDeclaration": {
+            "title": "2.2.GlobalVariableDeclaration",
+            "path": "en/2.ProgramStructure/2.2.GlobalVariableDeclaration.md"
+          },
+          "2.3.FunctionDeclaration": {
+            "title": "2.3.FunctionDeclaration",
+            "path": "en/2.ProgramStructure/2.3.FunctionDeclaration.md"
+          },
+          "2.4.ConstDeclaration": {
+            "title": "2.4.ConstDeclaration",
+            "path": "en/2.ProgramStructure/2.4.ConstDeclaration.md"
+          },
+          "2.5.ImportDeclaration": {
+            "title": "2.5.ImportDeclaration",
+            "path": "en/2.ProgramStructure/2.5.ImportDeclaration.md"
+          },
+          "readme": {
+            "title": "2. Program structure",
+            "path": "en/2.ProgramStructure/readme.md"
+          }
+        }
+      },
+      "3.BasicTypes": {
+        "title": "3.BasicTypes",
+        "path": "en/3.BasicTypes",
+        "children": {
+          "3.1.LocalVariableDeclaration": {
+            "title": "3.1.LocalVariableDeclaration",
+            "path": "en/3.BasicTypes/3.1.LocalVariableDeclaration.md"
+          },
+          "3.2.Integers": {
+            "title": "3.2.Integers",
+            "path": "en/3.BasicTypes/3.2.Integers.md"
+          },
+          "3.3.FloatingPointNumbers": {
+            "title": "3.3.FloatingPointNumbers",
+            "path": "en/3.BasicTypes/3.3.FloatingPointNumbers.md"
+          },
+          "3.4.String": {
+            "title": "3.4.String",
+            "path": "en/3.BasicTypes/3.4.String.md"
+          },
+          "readme": {
+            "title": "3. Basic types",
+            "path": "en/3.BasicTypes/readme.md"
+          }
+        }
+      },
+      "4.Function": {
+        "title": "4.Function",
+        "path": "en/4.Function",
+        "children": {
+          "4.1.FunctionCall": {
+            "title": "4.1.FunctionCall",
+            "path": "en/4.Function/4.1.FunctionCall.md"
+          },
+          "4.2.FunctionValues": {
+            "title": "4.2.FunctionValues",
+            "path": "en/4.Function/4.2.FunctionValues.md"
+          },
+          "4.3.AnonymousFunctionsAndClosures": {
+            "title": "4.3.AnonymousFunctionsAndClosures",
+            "path": "en/4.Function/4.3.AnonymousFunctionsAndClosures.md"
+          },
+          "4.4.ifStatements": {
+            "title": "4.4.ifStatements",
+            "path": "en/4.Function/4.4.ifStatements.md"
+          },
+          "4.5.forStatements": {
+            "title": "4.5.forStatements",
+            "path": "en/4.Function/4.5.forStatements.md"
+          },
+          "4.6.switchStatements": {
+            "title": "4.6.switchStatements",
+            "path": "en/4.Function/4.6.switchStatements.md"
+          },
+          "readme": {
+            "title": "4. Functions",
+            "path": "en/4.Function/readme.md"
+          }
+        }
+      },
+      "5.CompositeTypes": {
+        "title": "5.CompositeTypes",
+        "path": "en/5.CompositeTypes",
+        "children": {
+          "5.1.Reference": {
+            "title": "5.1.Reference",
+            "path": "en/5.CompositeTypes/5.1.Reference.md"
+          },
+          "5.2.Array": {
+            "title": "5.2.Array",
+            "path": "en/5.CompositeTypes/5.2.Array.md"
+          },
+          "5.3.Slice": {
+            "title": "5.3.Slice",
+            "path": "en/5.CompositeTypes/5.3.Slice.md"
+          },
+          "readme": {
+            "title": "5. Composite types",
+            "path": "en/5.CompositeTypes/readme.md"
+          }
+        }
+      },
+      "6.CustomTypes": {
+        "title": "6.CustomTypes",
+        "path": "en/6.CustomTypes",
+        "children": {
+          "6.1.Structure": {
+            "title": "6.1.Structure",
+            "path": "en/6.CustomTypes/6.1.Structure.md"
+          },
+          "6.2.Method": {
+            "title": "6.2.Method",
+            "path": "en/6.CustomTypes/6.2.Method.md"
+          },
+          "6.3.MethodValues": {
+            "title": "6.3.MethodValues",
+            "path": "en/6.CustomTypes/6.3.MethodValues.md"
+          },
+          "6.4.EmbeddedStructure": {
+            "title": "6.4.EmbeddedStructure",
+            "path": "en/6.CustomTypes/6.4.EmbeddedStructure.md"
+          },
+          "6.5.AnonymousStructure": {
+            "title": "6.5.AnonymousStructure",
+            "path": "en/6.CustomTypes/6.5.AnonymousStructure.md"
+          },
+          "readme": {
+            "title": "6. Custom types",
+            "path": "en/6.CustomTypes/readme.md"
+          }
+        }
+      },
+      "7.Interface": {
+        "title": "7.Interface",
+        "path": "en/7.Interface",
+        "children": {
+          "7.1.NullInterface": {
+            "title": "7.1.NullInterface",
+            "path": "en/7.Interface/7.1.NullInterface.md"
+          },
+          "7.2.Non-nullInterface": {
+            "title": "7.2.Non-nullInterface",
+            "path": "en/7.Interface/7.2.Non-nullInterface.md"
+          },
+          "7.3.TypeAssertions": {
+            "title": "7.3.TypeAssertions",
+            "path": "en/7.Interface/7.3.TypeAssertions.md"
+          },
+          "7.4.OtherFeatures": {
+            "title": "7.4.OtherFeatures",
+            "path": "en/7.Interface/7.4.OtherFeatures.md"
+          },
+          "readme": {
+            "title": "7. Interface",
+            "path": "en/7.Interface/readme.md"
+          }
+        }
+      }
+    }
+  },
+  "zh": {
+    "title": "zh",
+    "path": "zh",
+    "children": {
+      "1.安装及入门": {
+        "title": "1.安装及入门",
+        "path": "zh/1.安装及入门",
+        "children": {
+          "1.1.你好凹语言": {
+            "title": "1.1.你好凹语言",
+            "path": "zh/1.安装及入门/1.1.你好凹语言.md"
+          },
+          "1.2.安装凹语言": {
+            "title": "1.2.安装凹语言",
+            "path": "zh/1.安装及入门/1.2.安装凹语言.md"
+          },
+          "1.3.命令行功能": {
+            "title": "1.3.命令行功能",
+            "path": "zh/1.安装及入门/1.3.命令行功能.md"
+          },
+          "1.4.工程目录结构": {
+            "title": "1.4.工程目录结构",
+            "path": "zh/1.安装及入门/1.4.工程目录结构.md"
+          },
+          "1.5.IDE插件": {
+            "title": "1.5.IDE插件",
+            "path": "zh/1.安装及入门/1.5.IDE插件.md"
+          },
+          "readme": {
+            "title": "1. 安装及入门",
+            "path": "zh/1.安装及入门/readme.md"
+          }
+        }
+      },
+      "2.程序结构": {
+        "title": "2.程序结构",
+        "path": "zh/2.程序结构",
+        "children": {
+          "2.1.全局声明": {
+            "title": "2.1.全局声明",
+            "path": "zh/2.程序结构/2.1.全局声明.md"
+          },
+          "2.2.全局变量声明": {
+            "title": "2.2.全局变量声明",
+            "path": "zh/2.程序结构/2.2.全局变量声明.md"
+          },
+          "2.3.函数声明": {
+            "title": "2.3.函数声明",
+            "path": "zh/2.程序结构/2.3.函数声明.md"
+          },
+          "2.4.常量声明": {
+            "title": "2.4.常量声明",
+            "path": "zh/2.程序结构/2.4.常量声明.md"
+          },
+          "2.5.导入声明": {
+            "title": "2.5.导入声明",
+            "path": "zh/2.程序结构/2.5.导入声明.md"
+          },
+          "readme": {
+            "title": "2. 程序结构",
+            "path": "zh/2.程序结构/readme.md"
+          }
+        }
+      },
+      "3.基础数据类型": {
+        "title": "3.基础数据类型",
+        "path": "zh/3.基础数据类型",
+        "children": {
+          "3.1.局部变量声明": {
+            "title": "3.1.局部变量声明",
+            "path": "zh/3.基础数据类型/3.1.局部变量声明.md"
+          },
+          "3.2.整数": {
+            "title": "3.2.整数",
+            "path": "zh/3.基础数据类型/3.2.整数.md"
+          },
+          "3.3.浮点数": {
+            "title": "3.3.浮点数",
+            "path": "zh/3.基础数据类型/3.3.浮点数.md"
+          },
+          "3.4.字符串": {
+            "title": "3.4.字符串",
+            "path": "zh/3.基础数据类型/3.4.字符串.md"
+          },
+          "readme": {
+            "title": "3. 基础数据类型",
+            "path": "zh/3.基础数据类型/readme.md"
+          }
+        }
+      },
+      "4.函数": {
+        "title": "4.函数",
+        "path": "zh/4.函数",
+        "children": {
+          "4.1.函数调用": {
+            "title": "4.1.函数调用",
+            "path": "zh/4.函数/4.1.函数调用.md"
+          },
+          "4.2.函数值": {
+            "title": "4.2.函数值",
+            "path": "zh/4.函数/4.2.函数值.md"
+          },
+          "4.3.匿名函数及闭包": {
+            "title": "4.3.匿名函数及闭包",
+            "path": "zh/4.函数/4.3.匿名函数及闭包.md"
+          },
+          "4.4.条件语句": {
+            "title": "4.4.条件语句",
+            "path": "zh/4.函数/4.4.条件语句.md"
+          },
+          "4.5.循环语句": {
+            "title": "4.5.循环语句",
+            "path": "zh/4.函数/4.5.循环语句.md"
+          },
+          "4.6.分支语句": {
+            "title": "4.6.分支语句",
+            "path": "zh/4.函数/4.6.分支语句.md"
+          },
+          "readme": {
+            "title": "4. 函数",
+            "path": "zh/4.函数/readme.md"
+          }
+        }
+      },
+      "5.复合数据类型": {
+        "title": "5.复合数据类型",
+        "path": "zh/5.复合数据类型",
+        "children": {
+          "5.1.引用": {
+            "title": "5.1.引用",
+            "path": "zh/5.复合数据类型/5.1.引用.md"
+          },
+          "5.2.数组": {
+            "title": "5.2.数组",
+            "path": "zh/5.复合数据类型/5.2.数组.md"
+          },
+          "5.3.切片": {
+            "title": "5.3.切片",
+            "path": "zh/5.复合数据类型/5.3.切片.md"
+          },
+          "readme": {
+            "title": "5. 复合数据类型",
+            "path": "zh/5.复合数据类型/readme.md"
+          }
+        }
+      },
+      "6.自定义类型": {
+        "title": "6.自定义类型",
+        "path": "zh/6.自定义类型",
+        "children": {
+          "6.1.结构体": {
+            "title": "6.1.结构体",
+            "path": "zh/6.自定义类型/6.1.结构体.md"
+          },
+          "6.2.方法": {
+            "title": "6.2.方法",
+            "path": "zh/6.自定义类型/6.2.方法.md"
+          },
+          "6.3.方法值": {
+            "title": "6.3.方法值",
+            "path": "zh/6.自定义类型/6.3.方法值.md"
+          },
+          "6.4.嵌入结构体": {
+            "title": "6.4.嵌入结构体",
+            "path": "zh/6.自定义类型/6.4.嵌入结构体.md"
+          },
+          "6.5.匿名结构体": {
+            "title": "6.5.匿名结构体",
+            "path": "zh/6.自定义类型/6.5.匿名结构体.md"
+          },
+          "readme": {
+            "title": "6. 自定义类型",
+            "path": "zh/6.自定义类型/readme.md"
+          }
+        }
+      },
+      "7.接口": {
+        "title": "7.接口",
+        "path": "zh/7.接口",
+        "children": {
+          "7.1.空接口-万能封包器": {
+            "title": "7.1.空接口-万能封包器",
+            "path": "zh/7.接口/7.1.空接口-万能封包器.md"
+          },
+          "7.2.非空接口": {
+            "title": "7.2.非空接口",
+            "path": "zh/7.接口/7.2.非空接口.md"
+          },
+          "7.3.类型断言总结": {
+            "title": "7.3.类型断言总结",
+            "path": "zh/7.接口/7.3.类型断言总结.md"
+          },
+          "7.4.接口的其它特性": {
+            "title": "7.4.接口的其它特性",
+            "path": "zh/7.接口/7.4.接口的其它特性.md"
+          },
+          "readme": {
+            "title": "7. 接口",
+            "path": "zh/7.接口/readme.md"
+          }
+        }
+      },
+      "8.与宿主环境交互": {
+        "title": "8.与宿主环境交互",
+        "path": "zh/8.与宿主环境交互",
+        "children": {
+          "readme": {
+            "title": "8. 与宿主环境交互",
+            "path": "zh/8.与宿主环境交互/readme.md"
+          }
+        }
+      },
+      "9.附录": {
+        "title": "9.附录",
+        "path": "zh/9.附录",
+        "children": {
+          "a-spec": {
+            "title": "函数声明",
+            "path": "zh/9.附录/a-spec.md"
+          },
+          "b-std": {
+            "title": "b-std",
+            "path": "zh/9.附录/b-std.md"
+          },
+          "readme": {
+            "title": "附录",
+            "path": "zh/9.附录/readme.md"
+          }
+        }
+      }
+    }
+  }
+}
