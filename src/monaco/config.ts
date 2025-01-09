@@ -1,9 +1,8 @@
 export const monacoConfig = {
-  language: 'wa',
-  fontSize: 13,
+  fontSize: 14,
   glyphMargin: false,
   automaticLayout: true,
-  folding: false,
+  folding: true,
   lineDecorationsWidth: 10,
   lineNumbersMinChars: 3,
   fontFamily: 'DM Mono, monospace',

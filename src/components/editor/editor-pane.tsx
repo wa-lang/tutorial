@@ -1,4 +1,5 @@
 import { useWaMonaco } from '@/hooks/useWaMonaco'
+import { monacoConfig } from '@/monaco/config'
 import Editor from '@monaco-editor/react'
 import { useTheme } from '../ui/theme-provider'
 
@@ -14,7 +15,9 @@ export function EditorPane() {
       <div className="h-full w-full">
         <Editor
           {...monaco}
+          language="wa"
           height="100%"
+          options={monacoConfig}
           theme={theme === 'dark' ? 'vitesse-dark' : 'vitesse-light'}
           defaultValue={`// 版权 @2019 凹语言 作者。保留所有权利。
 

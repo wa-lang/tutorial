@@ -1,4 +1,4 @@
-import { langConfig, monacoConfig } from '@/monaco/config'
+import { langConfig } from '@/monaco/config'
 import { getShiki } from '@/monaco/shiki'
 import { useMonaco } from '@monaco-editor/react'
 import { shikiToMonaco } from '@shikijs/monaco'
@@ -21,5 +21,5 @@ export function useWaMonaco() {
     registerLangHighlighter(monaco)
   }, [monaco])
 
-  return { ...monacoConfig, ...monaco }
+  return monaco
 }
