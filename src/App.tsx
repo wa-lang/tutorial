@@ -1,7 +1,11 @@
+import { Header } from '@/components/header'
+import { MainContent } from '@/components/main-content'
+
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <h1 className="text-3xl font-bold underline">Hello Wa</h1>
+    <div className="h-screen flex flex-col">
+      <Header />
+      <MainContent />
     </div>
   )
 }
