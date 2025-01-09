@@ -1,12 +1,15 @@
 import { Header } from '@/components/header'
 import { MainContent } from '@/components/main-content'
+import { ThemeProvider } from '@/components/ui/theme-provider'
 
 function App() {
   return (
-    <div className="h-screen flex flex-col">
-      <Header />
-      <MainContent />
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="h-screen flex flex-col">
+        <Header />
+        <MainContent />
+      </div>
+    </ThemeProvider>
   )
 }
 
