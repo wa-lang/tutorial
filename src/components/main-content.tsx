@@ -1,6 +1,6 @@
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
-import { CodePane } from './code/code-pane'
 import { DocsPane } from './docs/docs-pane'
+import { EditorPane } from './editor/editor-pane'
 import { PreviewPane } from './preview/preview-pane'
 
 export function MainContent() {
@@ -14,7 +14,7 @@ export function MainContent() {
         <ResizablePanel defaultSize={50} minSize={5}>
           <ResizablePanelGroup direction="vertical">
             <ResizablePanel defaultSize={50} minSize={5}>
-              <CodePane />
+              <EditorPane />
             </ResizablePanel>
             <ResizableHandle className="hover:after:bg-foreground/5 data-[panel-group-direction=vertical]:after:h-3 z-10" />
             <ResizablePanel defaultSize={50} minSize={5}>
