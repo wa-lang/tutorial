@@ -21,5 +21,5 @@ export function useWaMonaco() {
     registerLangHighlighter(monaco)
   }, [monaco])
 
-  return monaco
+  return { language: 'wa', ...monaco }
 }

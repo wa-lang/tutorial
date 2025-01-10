@@ -9,7 +9,7 @@ export async function readMD(path: string): Promise<string> {
 
 export async function renderMD() {
   const md = MarkdownIt()
-  const highlighter = await getShiki() as any
+  const highlighter = await getShiki()
   md.use(fromHighlighter(highlighter, {
     theme: 'vitesse-dark',
   }))
