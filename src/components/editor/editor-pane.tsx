@@ -1,3 +1,4 @@
+import { useDebounce } from '@/hooks/useDebounce'
 import { useWaMonaco } from '@/hooks/useWaMonaco'
 import { runWa } from '@/lib/wawasm'
 import { monacoConfig } from '@/monaco/config'
@@ -31,18 +32,12 @@ func main {
     window.__WA_CODE__ = waCode
   }, [waCode])
 
+  const debouncedRun = useDebounce(runWa, 200)
+
   return (
     <div className="h-full">
       <div className="px-4 py-2 border-b border-dashed flex gap-2 items-center">
         main.wa
-        <button
-          className="px-2 py-1 rounded-md bg-blue-500 text-white"
-          onClick={() => {
-            runWa()
-          }}
-        >
-          运行
-        </button>
       </div>
       <div className="h-full w-full">
         <Editor
@@ -53,6 +48,7 @@ func main {
           defaultValue={waCode}
           onChange={(value) => {
             setWaCode(value || '')
+            debouncedRun()
           }}
         />
       </div>
