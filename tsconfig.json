@@ -1,17 +1,35 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "incremental": true,
+    "target": "ES2017",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
     "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
+      "@/*": [
+        "./src/*"
+      ]
     },
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "global.d.ts"
   ],
-  "files": []
+  "exclude": [
+    "node_modules"
+  ]
 }
