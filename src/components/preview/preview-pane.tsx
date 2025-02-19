@@ -26,19 +26,19 @@ export function PreviewPane() {
     <div className="h-full">
       <div className="px-2 py-1 border-b border-dashed flex gap-2 items-center">
         <button
-          className={`px-2 py-1 rounded-sm ${activeTab === 'output' ? 'bg-foreground/5' : ''}`}
+          className={`px-2 py-1 ${activeTab === 'output' ? 'bg-foreground/5' : ''}`}
           onClick={() => setActiveTab('output')}
         >
           Preview
         </button>
         <button
-          className={`px-2 py-1 rounded-sm ${activeTab === 'wat' ? 'bg-foreground/5' : ''}`}
+          className={`px-2 py-1 ${activeTab === 'wat' ? 'bg-foreground/5' : ''}`}
           onClick={() => setActiveTab('wat')}
         >
           WAT
         </button>
         <button
-          className={`px-2 py-1 rounded-sm ${activeTab === 'memory' ? 'bg-foreground/5' : ''}`}
+          className={`px-2 py-1 ${activeTab === 'memory' ? 'bg-foreground/5' : ''}`}
           onClick={() => setActiveTab('memory')}
         >
           Memory

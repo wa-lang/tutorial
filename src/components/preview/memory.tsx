@@ -227,7 +227,7 @@ export const MemoryPreview: FC = () => {
                 <span className="w-24 text-muted-foreground flex-shrink-0">{type}</span>
                 {!type.startsWith('Pointer') && (
                   <select
-                    className="bg-secondary border border-transparent px-1 py-0.5 text-[10px] rounded-sm focus-visible:outline-none"
+                    className="bg-secondary border border-transparent px-1 py-0.5 text-[10px] focus-visible:outline-none"
                     value={numberFormats[type as keyof typeof numberFormats]}
                     onChange={(e) => setNumberFormats(prev => ({
                       ...prev,
