@@ -41,6 +41,7 @@ func main {
       </div>
       <div className="h-full w-full">
         <Editor
+          language="wa"
           {...monaco}
           height="100%"
           theme={monacoTheme}

@@ -25,8 +25,8 @@ const WatPreview: FC<{
 
   return (
     <Editor
-      {...monaco}
       language="wasm"
+      {...monaco}
       options={{
         ...monacoConfig,
         readOnly: true,
