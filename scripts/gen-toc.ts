@@ -6,11 +6,12 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT_DIR = path.join(__dirname, '..')
 const DOCS_DIR = path.join(ROOT_DIR, 'docs')
-const OUTPUT_FILE = path.join(ROOT_DIR, 'src/constants/toc.json')
+const OUTPUT_FILE = path.join(ROOT_DIR, 'public/toc.json')
 
 interface ITocItem {
   title: string
   path: string
+  code?: string
   children?: Record<string, ITocItem>
 }
 
@@ -30,13 +31,21 @@ function extractTitleFromMd(filePath: string): string {
   }
 }
 
+function readWaFileContent(filePath: string): string {
+  try {
+    return fs.readFileSync(filePath, 'utf-8')
+  }
+  catch {
+    return ''
+  }
+}
+
 function genToc(dir: string, relativePath = ''): ITocStructure {
   const items: ITocStructure = {}
   const entries = fs.readdirSync(dir, { withFileTypes: true })
 
   const filteredEntries = entries.filter(entry =>
-    !entry.name.startsWith('.')
-    && entry.name !== 'code',
+    !entry.name.startsWith('.'),
   )
 
   filteredEntries.forEach((entry) => {
@@ -45,10 +54,20 @@ function genToc(dir: string, relativePath = ''): ITocStructure {
     const key = entry.name.replace(/\.md$/, '')
 
     if (entry.isFile() && entry.name.endsWith('.md')) {
-      items[key] = {
+      const mdItem: ITocItem = {
         title: extractTitleFromMd(fullPath),
         path: itemPath,
       }
+
+      const codeDir = path.join(path.dirname(fullPath), 'code')
+      const waFileName = `${path.basename(fullPath, '.md')}.wa`
+      const waFilePath = path.join(codeDir, waFileName)
+
+      if (fs.existsSync(waFilePath)) {
+        mdItem.code = readWaFileContent(waFilePath)
+      }
+
+      items[key] = mdItem
     }
     else if (entry.isDirectory()) {
       const children = genToc(fullPath, itemPath)

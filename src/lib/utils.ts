@@ -13,6 +13,7 @@ export interface ITocItem {
 export interface ITocChildItem {
   path: string
   title: string
+  code?: string
 }
 
 export function convertTocToMenuItems(tocData: { [key: string]: { children: ITocItem[] } }, lang: 'en' | 'zh' = 'zh') {
@@ -22,6 +23,7 @@ export function convertTocToMenuItems(tocData: { [key: string]: { children: IToc
     items: Object.entries(value.children).map(([__, childValue]: [string, ITocChildItem]) => ({
       value: childValue.path,
       label: childValue.title,
+      code: childValue.code,
     })).filter(item => !item.value.endsWith('/readme.md')),
   }))
 }

@@ -1,4 +1,4 @@
-import tocData from '@/constants/toc.json'
+import tocData from '../../../public/toc.json'
 import { convertTocToMenuItems } from '@/lib/utils'
 import { useTutorialStore } from '@/stores/tutorial'
 import { useEffect } from 'react'
@@ -21,6 +21,7 @@ export function DocsPane() {
       getNavItems,
       updatePathByIndex,
       getAllItems,
+      updateCode,
     },
   } = useTutorialStore()
 
@@ -48,7 +49,16 @@ export function DocsPane() {
       }
     }
 
+    const loadCode = async () => {
+      const pathParts = curPath.split('/')
+      const item = toc
+        .find(item => item.group === pathParts[1])?.items
+        ?.find((item: any) => item.value === curPath)
+      updateCode(item?.code || '')
+    }
+
     loadDocument()
+    loadCode()
   }, [curPath])
 
   const onPrev = () => updatePathByIndex(getCurIdx() - 1)

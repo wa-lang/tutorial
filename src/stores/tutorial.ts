@@ -5,6 +5,7 @@ import { createSelectors } from './withSelectors'
 interface INavItem {
   label: string
   value: string
+  code?: string
 }
 
 interface IStore {
