@@ -37,10 +37,23 @@ export function DocsPane() {
     if (!curPath)
       return
 
-    const loadDocument = async () => {
-      const md = await renderMD()
-      const content = await readMD(`docs/${curPath}`)
-      updateDoc(md.render(content))
+    const findCurrentItem = () => {
+      const [, group] = curPath.split('/')
+      return toc.find(item => item.group === group)?.items
+        ?.find((item: any) => item.value === curPath)
+    }
+
+    const loadContent = async () => {
+      const item = findCurrentItem()
+      if (!item) return
+
+      const [md, code] = await Promise.all([
+        renderMD().then(md => md.render(item.docs || '')),
+        Promise.resolve(item.code || '')
+      ])
+
+      updateDoc(md)
+      updateCode(code)
 
       const container = document.querySelector('.doc-container')
       if (container) {
@@ -48,16 +61,7 @@ export function DocsPane() {
       }
     }
 
-    const loadCode = async () => {
-      const pathParts = curPath.split('/')
-      const item = toc
-        .find(item => item.group === pathParts[1])?.items
-        ?.find((item: any) => item.value === curPath)
-      updateCode(item?.code || '')
-    }
-
-    loadDocument()
-    loadCode()
+    loadContent()
   }, [curPath])
 
   const onPrev = () => updatePathByIndex(getCurIdx() - 1)

@@ -14,6 +14,7 @@ export interface ITocChildItem {
   path: string
   title: string
   code?: string
+  docs?: string
 }
 
 export function convertTocToMenuItems(tocData: { [key: string]: { children: ITocItem[] } }, lang: 'en' | 'zh' = 'zh') {
@@ -24,6 +25,7 @@ export function convertTocToMenuItems(tocData: { [key: string]: { children: IToc
       value: childValue.path,
       label: childValue.title,
       code: childValue.code,
+      docs: childValue.docs,
     })).filter(item => !item.value.endsWith('/readme.md')),
   }))
 }

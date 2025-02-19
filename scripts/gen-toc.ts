@@ -12,6 +12,7 @@ interface ITocItem {
   title: string
   path: string
   code?: string
+  docs?: string
   children?: Record<string, ITocItem>
 }
 
@@ -31,7 +32,7 @@ function extractTitleFromMd(filePath: string): string {
   }
 }
 
-function readWaFileContent(filePath: string): string {
+function readFileContent(filePath: string): string {
   try {
     return fs.readFileSync(filePath, 'utf-8')
   }
@@ -57,6 +58,7 @@ function genToc(dir: string, relativePath = ''): ITocStructure {
       const mdItem: ITocItem = {
         title: extractTitleFromMd(fullPath),
         path: itemPath,
+        docs: readFileContent(fullPath),
       }
 
       const codeDir = path.join(path.dirname(fullPath), 'code')
@@ -64,7 +66,7 @@ function genToc(dir: string, relativePath = ''): ITocStructure {
       const waFilePath = path.join(codeDir, waFileName)
 
       if (fs.existsSync(waFilePath)) {
-        mdItem.code = readWaFileContent(waFilePath)
+        mdItem.code = readFileContent(waFilePath)
       }
 
       items[key] = mdItem

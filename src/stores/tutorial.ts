@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 import { createSelectors } from './withSelectors'
+import { IDB } from '@/lib/idb'
 
 interface INavItem {
   label: string
@@ -69,7 +70,7 @@ const tutorialStore = create<IStore>()(
     {
       name: 'WA_TUTORIAL_STORAGE',
       version: 1,
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => IDB),
       partialize: ({ actions, ...rest }: IStore) => ({ ...rest }) as IStore,
     },
   ),
