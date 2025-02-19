@@ -1,28 +1,23 @@
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
-import { DocsPane } from './docs/docs-pane'
-import { EditorPane } from './editor/editor-pane'
-import { PreviewPane } from './preview/preview-pane'
+import { useState, useEffect } from 'react'
+import { MobileLayout } from './mobile-layout'
+import { PcLayout } from './pc-layout'
 
 export function MainContent() {
-  return (
-    <div className="flex-1 flex flex-col overflow-auto">
-      <ResizablePanelGroup direction="horizontal" className="h-full">
-        <ResizablePanel defaultSize={60} minSize={5}>
-          <DocsPane />
-        </ResizablePanel>
-        <ResizableHandle className="hover:after:bg-foreground/5 after:w-3 z-10" />
-        <ResizablePanel defaultSize={40} minSize={5}>
-          <ResizablePanelGroup direction="vertical">
-            <ResizablePanel defaultSize={50} minSize={5}>
-              <EditorPane />
-            </ResizablePanel>
-            <ResizableHandle className="hover:after:bg-foreground/5 data-[panel-group-direction=vertical]:after:h-3 z-10" />
-            <ResizablePanel defaultSize={50} minSize={5}>
-              <PreviewPane />
-            </ResizablePanel>
-          </ResizablePanelGroup>
-        </ResizablePanel>
-      </ResizablePanelGroup>
-    </div>
-  )
+  const [isMobile, setIsMobile] = useState(false)
+  const [activeView, setActiveView] = useState('tutorial')
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  if (isMobile) {
+    return <MobileLayout activeView={activeView} setActiveView={setActiveView} />
+  }
+
+  return <PcLayout />
 }

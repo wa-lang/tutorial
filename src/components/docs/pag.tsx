@@ -16,7 +16,7 @@ interface IProps {
 
 export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProps) {
   return (
-    <div className="flex justify-between items-center mt-8 mb-10 gap-4">
+    <div className="flex justify-between items-center mt-8 mb-16 gap-4">
       <div
         className="w-1/2 p-6 border hover:border-theme cursor-pointer"
         onClick={onPrev}
@@ -25,7 +25,7 @@ export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProp
         {prev && (
           <div className="flex flex-col items-start">
             <ChevronLeft className="size-5" />
-            <span>{prev.label}</span>
+            <span className="text-xs sm:text-sm md:text-base">{prev.label}</span>
           </div>
         )}
       </div>
@@ -37,7 +37,7 @@ export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProp
         {next && (
           <div className="flex flex-col items-end">
             <ChevronRight className="size-5" />
-            <span>{next.label}</span>
+            <span className="text-xs sm:text-sm md:text-base">{next.label}</span>
           </div>
         )}
       </div>
