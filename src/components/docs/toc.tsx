@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface ITocItem {
   label: string
@@ -70,7 +71,7 @@ export default function Toc({
       onCut={e => e.preventDefault()}
     >
       <NavButton disabled={isFirstItem} onClick={onPrev}>
-        <span>←</span>
+        <ChevronLeft className="size-5" />
       </NavButton>
 
       <div className="flex-1 m-2.5 border bg-foreground/5 border-foreground/10 flex gap-2 items-center">
@@ -98,7 +99,7 @@ export default function Toc({
       </div>
 
       <NavButton disabled={isLastItem} onClick={onNext}>
-        <span>→</span>
+        <ChevronRight className="size-5" />
       </NavButton>
     </div>
   )

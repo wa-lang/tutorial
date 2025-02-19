@@ -1,3 +1,5 @@
+import { ChevronLeft, ChevronRight } from "lucide-react"
+
 interface INavItem {
   label: string
   value: string
@@ -22,7 +24,7 @@ export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProp
       >
         {prev && (
           <div className="flex flex-col items-start">
-            <span>←</span>
+            <ChevronLeft className="size-5" />
             <span>{prev.label}</span>
           </div>
         )}
@@ -34,7 +36,7 @@ export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProp
       >
         {next && (
           <div className="flex flex-col items-end">
-            <span>→</span>
+            <ChevronRight className="size-5" />
             <span>{next.label}</span>
           </div>
         )}

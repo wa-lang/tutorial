@@ -58,7 +58,7 @@ export async function runWa() {
     useWasmStore.getState().actions.updateWat(window.__WA_WAT__)
   }
   catch (e: unknown) {
-    useWasmStore.getState().actions.updateOutput(e instanceof Error ? e.message : String(e))
+    useWasmStore.getState().actions.updateOutput('Code error')
     useWasmStore.getState().actions.updateWat(null)
   }
 }
