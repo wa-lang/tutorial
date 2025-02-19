@@ -28,10 +28,8 @@ export function DocsPane() {
   useEffect(() => {
     const items = convertTocToMenuItems(tocData as any, lang) as any
     updateToc(items)
-    if (!curPath) {
-      const firstItem = items[0]?.items[0]
-      updateCurPath(firstItem?.value || '')
-    }
+    const firstItem = items[0]?.items[0]
+    updateCurPath(firstItem?.value || '')
   }, [lang])
 
   useEffect(() => {

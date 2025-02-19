@@ -9,7 +9,8 @@
         "children": {
           "1.1.HelloWorld": {
             "title": "1.1.HelloWorld",
-            "path": "en/1.InstallAndGetStart/1.1.HelloWorld.md"
+            "path": "en/1.InstallAndGetStart/1.1.HelloWorld.md",
+            "code": "// 版权 @2019 凹语言 作者。保留所有权利。\n\nimport \"fmt\"\nimport \"runtime\"\n\nglobal year: i32 = 2023\n\nfunc main {\n\tprintln(\"Hello, Wa Lang!\", runtime.WAOS)\n\tprintln(add(40, 2), year)\n\n\tfmt.Println(\"1+1 =\", 1+1)\n}\n\nfunc add(a: i32, b: i32) => i32 {\n\treturn a + b\n}\n"
           },
           "1.2.Install": {
             "title": "1.2.Install",
