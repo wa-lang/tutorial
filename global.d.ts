@@ -7,7 +7,7 @@ declare global {
 
   interface Window {
     __WA_WASM__: ArrayBuffer
-    __WA_WASM_INST__: any
+    __WA_WAT__: string
     __WA_CODE__: string
     __WA_PRINT__: string
     __WA_APP__: {

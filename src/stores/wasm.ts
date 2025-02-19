@@ -6,11 +6,13 @@ interface IStore {
   wasmMod: WebAssembly.Module | null
   go: any
   output: string
+  wat: string | null
   actions: {
     updateWasmInst: (wasmInst: WebAssembly.Instance) => void
     updateWasmMod: (wasmMod: WebAssembly.Module) => void
     updateGo: (go: any) => void
     updateOutput: (output: string) => void
+    updateWat: (wat: string | null) => void
   }
 }
 
@@ -19,6 +21,7 @@ const initialState: Omit<IStore, 'actions'> = {
   wasmMod: null,
   go: new window.Go(),
   output: '',
+  wat: null,
 }
 
 const wasmStore = create<IStore>()(
@@ -29,6 +32,7 @@ const wasmStore = create<IStore>()(
       updateWasmMod: wasmMod => set({ wasmMod }),
       updateGo: go => set({ go }),
       updateOutput: output => set({ output }),
+      updateWat: wat => set({ wat }),
     },
   }),
 )

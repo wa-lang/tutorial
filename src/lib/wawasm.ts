@@ -55,8 +55,10 @@ export async function runWa() {
     wasmInst.exports._start()
     wasmInst.exports['__main__.main']()
     useWasmStore.getState().actions.updateOutput(window.__WA_PRINT__)
+    useWasmStore.getState().actions.updateWat(window.__WA_WAT__)
   }
   catch (e: unknown) {
     useWasmStore.getState().actions.updateOutput(e instanceof Error ? e.message : String(e))
+    useWasmStore.getState().actions.updateWat(null)
   }
 }

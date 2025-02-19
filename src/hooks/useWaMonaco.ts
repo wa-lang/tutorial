@@ -17,7 +17,10 @@ export function useWaMonaco() {
       return
 
     monaco.languages.register({ id: 'wa' })
+    monaco.languages.register({ id: 'wasm' })
     monaco.languages.setLanguageConfiguration('wa', langConfig)
+    monaco.languages.setLanguageConfiguration('wasm', langConfig)
+
     registerLangHighlighter(monaco)
   }, [monaco])
 
