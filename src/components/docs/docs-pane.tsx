@@ -6,6 +6,7 @@ import { readMD, renderMD } from './md-render'
 import Pag from './pag'
 import Toc from './toc.tsx'
 import './md.css'
+import { SkeletonDocs } from '../skeleton-docs.tsx'
 
 export function DocsPane() {
   const {
@@ -74,7 +75,13 @@ export function DocsPane() {
         onNext={onNext}
       />
       <div className="doc-container flex-1 overflow-auto px-6">
-        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: doc }} />
+        {
+          doc ? (
+            <div className="markdown-body" dangerouslySetInnerHTML={{ __html: doc }} />
+          ) : (
+            <SkeletonDocs />
+          )
+        }
         <Pag
           prev={navItems.prev}
           next={navItems.next}

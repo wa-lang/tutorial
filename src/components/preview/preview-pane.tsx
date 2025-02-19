@@ -2,11 +2,12 @@ import { useWaMonaco } from '@/hooks/useWaMonaco'
 import { initWaWasm } from '@/lib/wawasm'
 import { useConfigStore } from '@/stores/config'
 import { useWasmStore } from '@/stores/wasm'
-import { AppWindowMac, Cpu, FileType, Loader2 } from 'lucide-react'
+import { AppWindowMac, Cpu, FileType } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { MemoryPreview } from './memory'
 import { OutputPreview } from './output'
 import { WatPreview } from './wat'
+import { SkeletonPreview } from '../skeleton-preview'
 
 const TABS = [
   {
@@ -55,11 +56,7 @@ export function PreviewPane() {
         ))}
       </div>
       {loading
-        ? (
-            <div className="h-full w-full flex items-center justify-center">
-              <Loader2 className="w-4 h-4 animate-spin" />
-            </div>
-          )
+        ? <SkeletonPreview />
         : (
             <div className="h-full w-full">
               {activeTab === 'output'

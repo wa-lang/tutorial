@@ -6,6 +6,7 @@ import { monacoConfig } from '@/monaco/config'
 import { useConfigStore } from '@/stores/config'
 import { useTutorialStore } from '@/stores/tutorial'
 import Editor from '@monaco-editor/react'
+import { SkeletonCode } from '../skeleton-code'
 
 export function EditorPane() {
   const monaco = useWaMonaco()
@@ -31,6 +32,7 @@ export function EditorPane() {
       </div>
       <div className="h-full w-full">
         <Editor
+          loading={<SkeletonCode/>}
           language="wa"
           {...monaco}
           height="100%"
