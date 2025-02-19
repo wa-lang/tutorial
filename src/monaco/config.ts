@@ -1,5 +1,6 @@
 export const monacoConfig = {
   fontSize: 14,
+  tabSize: 4,
   glyphMargin: false,
   automaticLayout: true,
   folding: true,

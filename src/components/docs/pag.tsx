@@ -16,7 +16,7 @@ export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProp
   return (
     <div className="flex justify-between items-center mt-8 mb-10 gap-4">
       <div
-        className="w-1/2 p-6 border rounded-md hover:border-theme cursor-pointer"
+        className="w-1/2 p-6 border hover:border-theme cursor-pointer"
         onClick={onPrev}
         style={{ opacity: curIdx === 0 ? 0 : 1 }}
       >
@@ -28,7 +28,7 @@ export default function Pag({ prev, next, onPrev, onNext, curIdx, total }: IProp
         )}
       </div>
       <div
-        className="w-1/2 p-6 border rounded-md hover:border-theme cursor-pointer"
+        className="w-1/2 p-6 border hover:border-theme cursor-pointer"
         onClick={onNext}
         style={{ opacity: curIdx >= total - 1 ? 0 : 1 }}
       >

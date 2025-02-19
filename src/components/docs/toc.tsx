@@ -73,7 +73,7 @@ export default function Toc({
         <span>←</span>
       </NavButton>
 
-      <div className="flex-1 m-2.5 border rounded-md bg-foreground/5 border-foreground/10 flex gap-2 items-center">
+      <div className="flex-1 m-2.5 border bg-foreground/5 border-foreground/10 flex gap-2 items-center">
         <Select
           defaultValue={items[0]?.items[0]?.value}
           onValueChange={onChange}
