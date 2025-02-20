@@ -1,0 +1,30 @@
+type T1 :struct {
+	a: i32
+}
+
+func main {
+	ival: i32 = 777
+	printConcrete(ival)
+	printConcrete("你好凹语言")
+
+	v1 := T1{a: 42}
+	printConcrete(v1)
+
+	printConcrete(13.14)
+}
+
+func printConcrete(iface: interface{}) {
+	switch v := iface.(type) {
+	case i32:
+		println("i32:", v)
+
+	case string:
+		println("string:", v)
+
+	case T1:
+		println("T1, T1.a:", v.a)
+
+	default:
+		println("未知类型")
+	}
+}

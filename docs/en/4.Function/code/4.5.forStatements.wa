@@ -1,0 +1,29 @@
+func main {
+	i: int
+	for {
+		i++
+		if i == 2 {
+			continue
+		}
+		println(i)
+		if i == 3 {
+			break
+		}
+	}
+
+	i = 0
+	for i < 3 {
+		println(i)
+		i++
+	}
+
+	for i := 0; i < 100; i++ {
+		if i == 1 {
+			continue
+		}
+		println(i)
+		if i == 2 {
+			break
+		}
+	}
+}

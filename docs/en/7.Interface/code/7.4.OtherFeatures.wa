@@ -1,0 +1,20 @@
+type I1 :interface {
+	f1()
+}
+
+type I2 :interface {
+	I1
+	f2()
+}
+
+type T :struct{}
+
+func T.f1 { println("T.f1()") }
+func T.f2 { println("T.f2()") }
+
+func main {
+	t := T{}
+	i2: I2 = &t
+	i2.f1()
+	i2.f2()
+}

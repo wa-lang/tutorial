@@ -1,0 +1,19 @@
+global G: struct {
+	name: string
+	age:  i32
+}
+
+func main {
+	G.name = "张三"
+	G.age = 88
+	println(G.name, " ", G.age)
+
+	k := struct {
+		name: string
+		age:  i32
+	}{name: "李四", age: 66}
+	println(k.name, " ", k.age)
+
+	G = k
+	println(G.name, " ", G.age)
+}

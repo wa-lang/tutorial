@@ -1,0 +1,20 @@
+func main() {
+	aI32: i32 = 42
+	aString: string = "你好"
+	aF32: f32
+
+	a := 13
+	f := 3.14
+	s := genString()
+
+	println(aI32)
+	println(aString)
+	println(aF32)
+	println(a)
+	println(f)
+	println(s)
+}
+
+func genString() => string {
+	return "Hello"
+}

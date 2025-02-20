@@ -1,0 +1,27 @@
+type I1 :interface {
+	f1()
+}
+
+type I2 :interface {
+	f2()
+}
+
+type T :struct {
+	i: i32
+}
+
+func T.f1 { println("T.f1(), T.i:", this.i) }
+
+func T.f2 { println("T.f2(), T.i:", this.i) }
+
+func main {
+	v1 := T{i: 42}
+
+	i1: I1 = &v1
+	i1.f1()
+
+	i2, ok := i1.(I2)
+	if ok {
+		i2.f2()
+	}
+}

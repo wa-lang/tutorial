@@ -1,0 +1,18 @@
+type Info :struct {
+	name: string
+	age:  i32
+}
+
+func Info.Print {
+	println("Name:", this.name, ", Age:", this.age)
+}
+
+func Print(this: *Info) {
+	println("Name:", this.name, ", Age:", this.age)
+}
+
+func main {
+	i := Info{name: "Tom", age: 35}
+	i.Print()
+	Print(&i)
+}

@@ -1,0 +1,11 @@
+global aInt: i32 = 42
+global _num: f32 = 952.7
+global name: string = "Tom"
+global counter: u32
+
+func main {
+	println(aInt)
+	println(_num)
+	println(name)
+	println(counter)
+}
