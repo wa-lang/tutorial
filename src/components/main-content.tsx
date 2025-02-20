@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { MobileLayout } from './mobile-layout'
 import { PcLayout } from './pc-layout'
 

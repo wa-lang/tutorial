@@ -102,7 +102,6 @@ const WAOS = "..."
 
 - WAOS：凹语言目标OS名字，目前有 wasi、mvp 等
 
-
 ### B.6 syscall - 系统调用包
 
 凹语言不同目标平台提供的系统调用。通常是 runtime 或其他包封装 syscall 包的函数。

@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { formatMemory, getMemoryValue } from '@/lib/memory'
-import { useEffect, useState, useCallback, useMemo, memo } from 'react'
+import { memo, useCallback, useEffect, useMemo, useState } from 'react'
 
 interface IMemoryItem {
   address: string
@@ -16,7 +16,7 @@ interface IMemoryCellProps {
 
 const NUMBER_FORMAT_OPTIONS = {
   integer: ['dec', 'hex', 'oct'],
-  float: ['dec', 'sci']
+  float: ['dec', 'sci'],
 } as const
 
 const DEF_NUMBER_FORMATS = {
@@ -27,7 +27,7 @@ const DEF_NUMBER_FORMATS = {
   'Float 32-bit': 'sci',
   'Float 64-bit': 'sci',
   'Pointer 32-bit': 'hex',
-  'Pointer 64-bit': 'hex'
+  'Pointer 64-bit': 'hex',
 } as Record<string, string>
 
 const MemoryCell = memo<IMemoryCellProps>(({ content, isSelected, onClick }) => (
@@ -40,7 +40,7 @@ const MemoryCell = memo<IMemoryCellProps>(({ content, isSelected, onClick }) => 
 ))
 
 const MemoryAddress = memo<{ address: string, isSelected: boolean }>(({ address, isSelected }) => (
-  <div className={`w-24 border-r px-2 py-1 ${ isSelected ? 'text-primary' : 'text-muted-foreground'}`}>
+  <div className={`w-24 border-r px-2 py-1 ${isSelected ? 'text-primary' : 'text-muted-foreground'}`}>
     <span className="text-xs">{address}</span>
   </div>
 ))
@@ -52,17 +52,17 @@ const MemoryHex = memo<{
   selectedCol: number | null
   onCellClick: (row: number, col: number) => void
 }>(({ hex, rowIndex, selectedRow, selectedCol, onCellClick }) => (
-  <div className="border-r px-2 py-1 flex gap-1 *:flex-1">
-    {hex.split(' ').map((hex, hexIndex) => (
-      <MemoryCell
-        key={hexIndex}
-        content={hex.toUpperCase()}
-        isSelected={selectedRow === rowIndex && selectedCol === hexIndex}
-        onClick={() => onCellClick(rowIndex, hexIndex)}
-      />
-    ))}
-  </div>
-))
+      <div className="border-r px-2 py-1 flex gap-1 *:flex-1">
+        {hex.split(' ').map((hex, hexIndex) => (
+          <MemoryCell
+            key={hexIndex}
+            content={hex.toUpperCase()}
+            isSelected={selectedRow === rowIndex && selectedCol === hexIndex}
+            onClick={() => onCellClick(rowIndex, hexIndex)}
+          />
+        ))}
+      </div>
+    ))
 
 const MemoryAscii = memo<{
   ascii: string
@@ -71,17 +71,17 @@ const MemoryAscii = memo<{
   selectedCol: number | null
   onCellClick: (row: number, col: number) => void
 }>(({ ascii, rowIndex, selectedRow, selectedCol, onCellClick }) => (
-  <div className="w-28 px-2 py-1 text-muted-foreground flex gap-1">
-    {ascii.split('').map((char, charIndex) => (
-      <MemoryCell
-        key={charIndex}
-        content={char}
-        isSelected={selectedRow === rowIndex && selectedCol === charIndex}
-        onClick={() => onCellClick(rowIndex, charIndex)}
-      />
-    ))}
-  </div>
-))
+      <div className="w-28 px-2 py-1 text-muted-foreground flex gap-1">
+        {ascii.split('').map((char, charIndex) => (
+          <MemoryCell
+            key={charIndex}
+            content={char}
+            isSelected={selectedRow === rowIndex && selectedCol === charIndex}
+            onClick={() => onCellClick(rowIndex, charIndex)}
+          />
+        ))}
+      </div>
+    ))
 
 const MemoryRow = memo<{
   item: IMemoryItem
@@ -90,27 +90,27 @@ const MemoryRow = memo<{
   selectedCol: number | null
   onCellClick: (row: number, col: number) => void
 }>(({ item, rowIndex, selectedRow, selectedCol, onCellClick }) => (
-  <div className={`flex text-xs text-center ${selectedRow === rowIndex ? 'bg-secondary/50' : ''}`}>
-    <MemoryAddress
-      address={item.address.toUpperCase()}
-      isSelected={selectedRow === rowIndex}
-    />
-    <MemoryHex
-      hex={item.hex}
-      rowIndex={rowIndex}
-      selectedRow={selectedRow}
-      selectedCol={selectedCol}
-      onCellClick={onCellClick}
-    />
-    <MemoryAscii
-      ascii={item.ascii}
-      rowIndex={rowIndex}
-      selectedRow={selectedRow}
-      selectedCol={selectedCol}
-      onCellClick={onCellClick}
-    />
-  </div>
-))
+      <div className={`flex text-xs text-center ${selectedRow === rowIndex ? 'bg-secondary/50' : ''}`}>
+        <MemoryAddress
+          address={item.address.toUpperCase()}
+          isSelected={selectedRow === rowIndex}
+        />
+        <MemoryHex
+          hex={item.hex}
+          rowIndex={rowIndex}
+          selectedRow={selectedRow}
+          selectedCol={selectedCol}
+          onCellClick={onCellClick}
+        />
+        <MemoryAscii
+          ascii={item.ascii}
+          rowIndex={rowIndex}
+          selectedRow={selectedRow}
+          selectedCol={selectedCol}
+          onCellClick={onCellClick}
+        />
+      </div>
+    ))
 
 export const MemoryPreview: FC = () => {
   const [memory, setMemory] = useState<IMemoryItem[]>([])
@@ -142,48 +142,52 @@ export const MemoryPreview: FC = () => {
   }, [])
 
   const getValueAtSelection = useCallback(() => {
-    if (selectedRow === null || selectedCol === null || !memory[selectedRow]) return null;
+    if (selectedRow === null || selectedCol === null || !memory[selectedRow])
+      return null
 
-    const startIdx = selectedRow * 4 + selectedCol;
-    const buffer = window.__WA_WASM__;
-    if (!buffer) return null;
+    const startIdx = selectedRow * 4 + selectedCol
+    const buffer = window.__WA_WASM__
+    if (!buffer)
+      return null
 
-    return getMemoryValue(buffer, startIdx, isLittleEndian);
-  }, [selectedRow, selectedCol, memory, isLittleEndian]);
+    return getMemoryValue(buffer, startIdx, isLittleEndian)
+  }, [selectedRow, selectedCol, memory, isLittleEndian])
 
   const endianValues = useMemo(() => getValueAtSelection(), [getValueAtSelection])
 
   const currentAddress = useMemo(() => {
-    if (selectedRow === null || selectedCol === null) return '0x00000000'
+    if (selectedRow === null || selectedCol === null)
+      return '0x00000000'
     const address = (selectedRow * 4 + selectedCol)
     return `0x${address.toString(16).padStart(8, '0').toUpperCase()}`
   }, [selectedRow, selectedCol])
 
   const formatValue = (type: string, value: number | bigint | null) => {
-    if (value === null) return 'N/A';
+    if (value === null)
+      return 'N/A'
 
     if (type.startsWith('Pointer')) {
       return typeof value === 'bigint'
         ? `0x${value.toString(16)}`
-        : `0x${value.toString(16)}`;
+        : `0x${value.toString(16)}`
     }
 
     if (type.startsWith('Float')) {
-      const format = numberFormats[type as keyof typeof numberFormats];
-      const num = Number(value);
+      const format = numberFormats[type as keyof typeof numberFormats]
+      const num = Number(value)
       if (format === 'sci') {
-        return num.toExponential(6);
+        return num.toExponential(6)
       }
-      return num.toFixed(2);
+      return num.toFixed(2)
     }
 
-    const format = numberFormats[type as keyof typeof numberFormats];
+    const format = numberFormats[type as keyof typeof numberFormats]
     switch (format) {
-      case 'hex': return `0x${value.toString(16).toUpperCase()}`;
-      case 'oct': return `${value.toString(8)}`;
-      default: return value.toString();
+      case 'hex': return `0x${value.toString(16).toUpperCase()}`
+      case 'oct': return `${value.toString(8)}`
+      default: return value.toString()
     }
-  };
+  }
 
   return (
     <div className="flex h-full w-full">
@@ -199,8 +203,8 @@ export const MemoryPreview: FC = () => {
               rowIndex={rowIndex}
               selectedRow={selectedRow}
               selectedCol={selectedCol}
-                onCellClick={handleCellClick}
-              />
+              onCellClick={handleCellClick}
+            />
           ))}
         </div>
       </div>
@@ -229,9 +233,9 @@ export const MemoryPreview: FC = () => {
                   <select
                     className="bg-secondary border border-transparent px-1 py-0.5 text-[10px] focus-visible:outline-none"
                     value={numberFormats[type as keyof typeof numberFormats]}
-                    onChange={(e) => setNumberFormats(prev => ({
+                    onChange={e => setNumberFormats(prev => ({
                       ...prev,
-                      [type]: e.target.value
+                      [type]: e.target.value,
                     }))}
                   >
                     {(type.startsWith('Float')

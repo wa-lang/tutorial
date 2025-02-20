@@ -1,7 +1,7 @@
+import { IDB } from '@/lib/idb'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 import { createSelectors } from './withSelectors'
-import { IDB } from '@/lib/idb'
 
 interface INavItem {
   label: string

@@ -1,6 +1,6 @@
 import Logo from '@/assets/logo.svg?react'
-import { ModeToggle } from './ui/mode-toggle'
 import { LangToggle } from './lang-toggle'
+import { ModeToggle } from './ui/mode-toggle'
 
 export function Header() {
   return (

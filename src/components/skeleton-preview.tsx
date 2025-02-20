@@ -1,6 +1,6 @@
-import { Skeleton } from "./ui/skeleton"
+import { Skeleton } from './ui/skeleton'
 
-export const SkeletonPreview = () => {
+export function SkeletonPreview() {
   return (
     <div className="h-full w-full flex flex-col space-y-3 p-4">
       <Skeleton className="h-[125px] w-full" />

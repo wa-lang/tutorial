@@ -1,6 +1,6 @@
-import { DocsPane } from "./docs/docs-pane"
-import { EditorPane } from "./editor/editor-pane"
-import { PreviewPane } from "./preview/preview-pane"
+import { DocsPane } from './docs/docs-pane'
+import { EditorPane } from './editor/editor-pane'
+import { PreviewPane } from './preview/preview-pane'
 
 interface MobileLayoutProps {
   activeView: string
@@ -10,12 +10,14 @@ interface MobileLayoutProps {
 export function MobileLayout({ activeView, setActiveView }: MobileLayoutProps) {
   return (
     <div className="flex-1 flex flex-col h-screen overflow-hidden">
-      <div className="flex-1 transition-transform duration-300 h-[calc(100vh-64px)] overflow-hidden"
+      <div
+        className="flex-1 transition-transform duration-300 h-[calc(100vh-64px)] overflow-hidden"
         style={{
           transform: `translateX(${activeView === 'tutorial' ? '0%' : '-50%'})`,
           width: '200%',
-          display: 'flex'
-        }}>
+          display: 'flex',
+        }}
+      >
         <div className="w-full h-full overflow-y-auto">
           <DocsPane />
         </div>

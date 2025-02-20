@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useDebounce } from '@/hooks/useDebounce'
 import { useWaMonaco } from '@/hooks/useWaMonaco'
 import { runWa } from '@/lib/wawasm'
@@ -6,6 +5,7 @@ import { monacoConfig } from '@/monaco/config'
 import { useConfigStore } from '@/stores/config'
 import { useTutorialStore } from '@/stores/tutorial'
 import Editor from '@monaco-editor/react'
+import { useEffect } from 'react'
 import { SkeletonCode } from '../skeleton-code'
 
 export function EditorPane() {
@@ -24,7 +24,6 @@ export function EditorPane() {
     runWa()
   }, [code])
 
-
   return (
     <div className="h-full">
       <div className="px-4 py-2 border-b border-dashed flex gap-2 items-center">
@@ -32,7 +31,7 @@ export function EditorPane() {
       </div>
       <div className="h-full w-full">
         <Editor
-          loading={<SkeletonCode/>}
+          loading={<SkeletonCode />}
           language="wa"
           {...monaco}
           height="100%"

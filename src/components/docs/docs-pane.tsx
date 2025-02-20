@@ -1,12 +1,12 @@
-import tocData from '../../../public/toc.json'
 import { convertTocToMenuItems } from '@/lib/utils'
 import { useTutorialStore } from '@/stores/tutorial'
 import { useEffect } from 'react'
-import { readMD, renderMD } from './md-render'
+import tocData from '../../../public/toc.json'
+import { SkeletonDocs } from '../skeleton-docs.tsx'
+import { renderMD } from './md-render'
 import Pag from './pag'
 import Toc from './toc.tsx'
 import './md.css'
-import { SkeletonDocs } from '../skeleton-docs.tsx'
 
 export function DocsPane() {
   const {
@@ -39,17 +39,17 @@ export function DocsPane() {
 
     const findCurrentItem = () => {
       const [, group] = curPath.split('/')
-      return toc.find(item => item.group === group)?.items
-        ?.find((item: any) => item.value === curPath)
+      return toc.find(item => item.group === group)?.items?.find((item: any) => item.value === curPath)
     }
 
     const loadContent = async () => {
       const item = findCurrentItem()
-      if (!item) return
+      if (!item)
+        return
 
       const [md, code] = await Promise.all([
         renderMD().then(md => md.render(item.docs || '')),
-        Promise.resolve(item.code || '')
+        Promise.resolve(item.code || ''),
       ])
 
       updateDoc(md)
@@ -80,11 +80,13 @@ export function DocsPane() {
       />
       <div className="doc-container flex-1 overflow-auto px-6">
         {
-          doc ? (
-            <div className="markdown-body" dangerouslySetInnerHTML={{ __html: doc }} />
-          ) : (
-            <SkeletonDocs />
-          )
+          doc
+            ? (
+                <div className="markdown-body" dangerouslySetInnerHTML={{ __html: doc }} />
+              )
+            : (
+                <SkeletonDocs />
+              )
         }
         <Pag
           prev={navItems.prev}

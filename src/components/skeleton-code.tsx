@@ -1,6 +1,6 @@
-import { Skeleton } from "./ui/skeleton"
+import { Skeleton } from './ui/skeleton'
 
-export const SkeletonCode = () => {
+export function SkeletonCode() {
   return (
     <div className="h-full w-full">
       <div className="w-full space-y-2 p-4">
