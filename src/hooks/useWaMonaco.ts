@@ -1,14 +1,16 @@
 import { langConfig } from '@/monaco/config'
 import { getShiki } from '@/monaco/shiki'
+import { useConfigStore } from '@/stores/config'
 import { useMonaco } from '@monaco-editor/react'
 import { shikiToMonaco } from '@shikijs/monaco'
 import { useEffect } from 'react'
 
 export function useWaMonaco() {
+  const { theme } = useConfigStore()
   const monaco = useMonaco()
 
   const registerLangHighlighter = async (monaco: typeof useMonaco) => {
-    const highlighter = await getShiki()
+    const highlighter = await getShiki(theme)
     shikiToMonaco(highlighter, monaco)
   }
 
