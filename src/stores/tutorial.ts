@@ -69,7 +69,7 @@ const tutorialStore = create<IStore>()(
     }),
     {
       name: 'WA_TUTORIAL_STORAGE',
-      version: 1,
+      version: 1.1,
       storage: createJSONStorage(() => IDB),
       partialize: ({ actions, ...rest }: IStore) => ({ ...rest }) as IStore,
     },
