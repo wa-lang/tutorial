@@ -1,3 +1,5 @@
+import type * as Monaco from 'monaco-editor'
+
 export const monacoConfig = {
   fontSize: 14,
   tabSize: 4,
@@ -35,4 +37,4 @@ export const langConfig = {
     { open: '"', close: '"' },
     { open: '\'', close: '\'' },
   ],
-}
+} satisfies Monaco.languages.LanguageConfiguration
