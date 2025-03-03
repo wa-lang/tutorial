@@ -1,0 +1,24 @@
+func main {
+	a: [3]i32
+	a[0] = 42
+	println(a[0])
+
+	b := [3]i32{13, 42, 9527}
+	println(b[0], b[1], b[2])
+
+	c := [3]i32{13, 42}
+	println(c[2])
+
+	d := [3]i32{}
+	println(len(d))
+
+	e := [...]i32{13, 42}
+	println(len(e))
+
+	f := [...]i32{13, 42}
+	g: [2]i32
+	g = f
+	println(g[0], g[1])
+	g[0] = 9527
+	println(f[0])
+}

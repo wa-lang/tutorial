@@ -1,0 +1,16 @@
+func f(x: int) {
+	switch x {
+	case 0:
+		println("x is 0")
+	case 1:
+		println("x is 1")
+	default:
+		println("x == ", x)
+	}
+}
+
+func main {
+	f(0)
+	f(1)
+	f(2)
+}

@@ -1,0 +1,35 @@
+func useFunc(i: i32, f: func(i32) => i32) {
+	if f == nil {
+		println("f == nil")
+		return
+	}
+	println(f(i))
+}
+
+func genClosure(i: i32) => func() => i32 {
+	n := i
+	return func() => i32 {
+		n = n + 1
+		return n
+	}
+}
+
+func main {
+	f := func(i: i32) => i32 { return i * i }
+	useFunc(3, f)
+
+	n: i32 = 0
+	f = func(i: i32) => i32 {
+		n = i * i
+		return n
+	}
+	useFunc(3, f)
+	println(n)
+
+	c := genClosure(0)
+	d := genClosure(99)
+	println(c())
+	println(d())
+	println(c())
+	println(d())
+}

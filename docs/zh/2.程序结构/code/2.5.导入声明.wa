@@ -1,0 +1,8 @@
+import (
+	"errors"
+)
+
+func main {
+	err := errors.New("!!!")
+	println("err:", err.Error())
+}

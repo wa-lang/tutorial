@@ -1,0 +1,15 @@
+func Compare(x, y: int) => int {
+	if x < y {
+		return 1
+	} else if x > y {
+		return -1
+	} else {
+		return 0
+	}
+}
+
+func main {
+	println(Compare(1, 2))
+	println(Compare(2, 1))
+	println(Compare(1, 1))
+}

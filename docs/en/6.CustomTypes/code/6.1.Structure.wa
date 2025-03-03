@@ -1,0 +1,33 @@
+type Info :struct {
+	name: string
+	age:  i32
+}
+
+func PrintInfo(i: Info) {
+	println("Name:", i.name, "Age:", i.age)
+}
+
+func GetInfo() => *Info {
+	i: Info
+	i.name = "Frank"
+	i.age = 42
+	return &i
+}
+
+type Node :struct {
+	data: i32
+	next: *Node
+}
+
+func main {
+	i: Info
+	i.name = "Tom"
+	i.age = 35
+	PrintInfo(i)
+
+	j := GetInfo()
+	println(j.name, j.age)
+
+	k := Info{name: "Jerry"}
+	println(k.name, k.age)
+}
