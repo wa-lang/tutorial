@@ -1,0 +1,13 @@
+func main() {
+	i: f32 = 1.25
+	println(-i)
+
+	x, y: f64 = 1, 0.5
+	println(x + y)
+	println(x - y)
+	println(x * y)
+	println(y / x)
+
+	f := 1.5
+	println(f)
+}

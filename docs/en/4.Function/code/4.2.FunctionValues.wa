@@ -1,0 +1,31 @@
+func inc(i: i32) => i32 { return i + 1 }
+func dec(i: i32) => i32 { return i - 1 }
+
+func getFunc(opCode: i32) => func(i32) => i32 {
+	if opCode == 0 {
+		return inc
+	} else if opCode == 1 {
+		return dec
+	} else {
+		return nil
+	}
+}
+
+func useFunc(i: i32, f: func(i32) => i32) {
+	if f == nil {
+		println("f == nil")
+		return
+	}
+	println(f(i))
+}
+
+func main {
+	f := inc
+	println(f(42))
+	f = dec
+	println(f(42))
+
+	useFunc(42, getFunc(0))
+	useFunc(42, getFunc(1))
+	useFunc(42, getFunc(2))
+}

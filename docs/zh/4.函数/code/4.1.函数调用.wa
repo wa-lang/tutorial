@@ -1,0 +1,24 @@
+func Double(i: i32) => i32 {
+	i = i * 2
+	return i
+}
+
+func MulRet() => (i32, i32) {
+	return 42, 13
+}
+
+func showAnswer() => (answer: i32) {
+	answer = 42
+	return
+}
+
+func main {
+	j: i32 = 42
+	println(Double(j))
+	println(j)
+
+	a, b := MulRet()
+	println(a, b)
+
+	println(showAnswer())
+}

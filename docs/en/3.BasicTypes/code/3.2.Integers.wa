@@ -1,0 +1,29 @@
+func main() {
+	i: u8 = 9
+	println(^i)
+	println(-i)
+
+	j: i32 = 9
+	println(^j)
+	println(-j)
+
+	x, y: u8 = 9, 250
+	println(x + y)
+	println(x - y)
+	println(x * y)
+	println(y / x)
+	println(y % x)
+
+	m, n: u16 = 343, 47831
+	println(m & n)
+	println(m | n)
+	println(m ^ n)
+	println(m &^ n)
+	println(m << 5)
+	println(n >> 5)
+
+	b1 := true
+	b2 := false
+	println(!b1)
+	println(!b2)
+}

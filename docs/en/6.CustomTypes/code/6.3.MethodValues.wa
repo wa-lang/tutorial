@@ -1,0 +1,37 @@
+type Vertex :struct {
+	x, y: i32
+}
+
+func Vertex.Scale(s: i32) {
+	this.x *= s
+	this.y *= s
+}
+
+func Vertex.Sub(s: i32) {
+	this.x -= s
+	this.y -= s
+}
+
+func Vertex.Print {
+	println("x:", this.x, "y:", this.y)
+}
+
+func FnOp(s: i32) {
+	println("FnOp, s:", s)
+}
+
+func main {
+	v := Vertex{x: 100, y: 200}
+	op: func(s: i32)
+
+	op = FnOp
+	op(13)
+
+	op = v.Scale
+	op(2)
+	v.Print()
+
+	op = v.Sub
+	op(50)
+	v.Print()
+}
