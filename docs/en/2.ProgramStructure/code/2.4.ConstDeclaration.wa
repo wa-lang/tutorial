@@ -1,0 +1,17 @@
+const Answer: i32 = 42
+const aConstString: string = "Hello Wa"
+const aConstInt = 13
+const K = 4200000000000000000000000
+const J = 4200000000000000000000000
+
+const aUntypedInt = 11
+const aUntypedFloat = 13.0
+const aUntypedRune = 'a'
+const aUntypedString = "abc"
+
+func main {
+	println(Answer)
+	println(aConstString)
+	println(aConstInt)
+	println(K / J)
+}

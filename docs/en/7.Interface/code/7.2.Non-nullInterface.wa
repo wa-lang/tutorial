@@ -1,0 +1,37 @@
+type Printer :interface {
+	Print()
+}
+
+type T1 :struct {
+	i: i32
+}
+
+func T1.Print {
+	println("This is T1, this.i:", this.i)
+}
+
+type T2 :struct {
+	s: string
+}
+
+func T2.Print {
+	println("This is T2, this.s:", this.s)
+}
+
+func PrintObj(p: Printer) {
+	p.Print()
+}
+
+func main {
+	p: Printer
+
+	v1: T1
+	v1.i = 42
+	p = &v1
+	PrintObj(p)
+
+	v2: T2
+	v2.s = "Hello"
+	p = &v2
+	PrintObj(p)
+}

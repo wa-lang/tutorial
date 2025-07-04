@@ -1,0 +1,18 @@
+import "errors"
+
+const PI = 3.1415926
+
+global answer: i32
+
+func main {
+	answer = getAnswer()
+	println("The Answer to the Universe:", answer)
+	println("π:", PI)
+
+	err := errors.New("!!!")
+	println("err:", err.Error())
+}
+
+func getAnswer => i32 {
+	return 42
+}
