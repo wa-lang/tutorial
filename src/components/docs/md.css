@@ -891,7 +891,31 @@
     filter: invert(50%);
   }
 
-  s {
-    opacity: 0.6;
+
+  .code-compare-wrapper {
+    margin: 1rem 0;
+  }
+
+  .code-compare-content {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .code-compare-content .shiki {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .code-compare-content pre {
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  .code-compare-content code {
+    font-size: 14px;
+    line-height: 1.6;
+    @apply font-mono;
   }
 }

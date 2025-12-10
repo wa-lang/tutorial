@@ -1,8 +1,10 @@
 import { convertTocToMenuItems } from '@/lib/utils'
 import { useTutorialStore } from '@/stores/tutorial'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { createRoot } from 'react-dom/client'
 import tocData from '../../../public/toc.json'
 import { SkeletonDocs } from '../skeleton-docs.tsx'
+import { CodeCompare } from './code-compare.tsx'
 import { renderMD } from './md-render'
 import Pag from './pag'
 import Toc from './toc.tsx'
@@ -25,6 +27,8 @@ export function DocsPane() {
       updateCode,
     },
   } = useTutorialStore()
+
+  const rootsRef = useRef<Map<string, any>>(new Map())
 
   useEffect(() => {
     const items = convertTocToMenuItems(tocData as any, lang) as any
@@ -63,6 +67,34 @@ export function DocsPane() {
 
     loadContent()
   }, [curPath])
+
+  useEffect(() => {
+    if (!doc)
+      return
+
+    const timer = setTimeout(() => {
+      const wrappers = document.querySelectorAll('.code-compare-wrapper')
+
+      wrappers.forEach((wrapper) => {
+        const id = wrapper.getAttribute('data-id')
+        const waCode = decodeURIComponent(wrapper.getAttribute('data-wa') || '')
+        const goCode = decodeURIComponent(wrapper.getAttribute('data-go') || '')
+        const jsCode = decodeURIComponent(wrapper.getAttribute('data-js') || '')
+
+        if (id) {
+          const root = createRoot(wrapper)
+          root.render(<CodeCompare waCode={waCode} goCode={goCode} jsCode={jsCode} />)
+          rootsRef.current.set(id, root)
+        }
+      })
+    }, 0)
+
+    return () => {
+      clearTimeout(timer)
+      rootsRef.current.forEach(root => root.unmount())
+      rootsRef.current.clear()
+    }
+  }, [doc])
 
   const onPrev = () => updatePathByIndex(getCurIdx() - 1)
   const onNext = () => updatePathByIndex(getCurIdx() + 1)

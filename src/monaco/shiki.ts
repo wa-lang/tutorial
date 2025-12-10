@@ -4,6 +4,8 @@ import waGrammar from './wa.tmLanguage.json'
 
 const wasm = bundledLanguages.wasm
 const zsh = bundledLanguages.zsh
+const go = bundledLanguages.go
+const javascript = bundledLanguages.javascript
 
 export async function getShiki(defaultTheme: 'light' | 'dark' = 'light') {
   const themes = defaultTheme === 'light'
@@ -12,7 +14,7 @@ export async function getShiki(defaultTheme: 'light' | 'dark' = 'light') {
 
   const highlighter = await createHighlighter({
     themes,
-    langs: [wasm, zsh, waGrammar as unknown as LanguageRegistration],
+    langs: [wasm, zsh, go, javascript, waGrammar as unknown as LanguageRegistration],
   })
 
   return highlighter
